@@ -14,7 +14,11 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
-    pkgsDarwin = nixpkgs.legacyPackages.aarch64-darwin;
+    pkgsDarwin = import nixpkgs {
+      system = "aarch64-darwin";
+      config = { allowUnfree = true; };
+    };
+
     pkgsLinux = nixpkgs.legacyPackages.x86_64-linux; # future work
   in
   {
