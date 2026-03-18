@@ -2,7 +2,7 @@
   description = "system config";
 
   inputs = {
-  nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -10,6 +10,9 @@
     # to install packages "locally"
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Funky brew stuff
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew"
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
@@ -38,6 +41,16 @@
               ./modules/shared/home.nix
               ./modules/air/home.nix
             ];
+          };
+        }
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = "lukas";
+            mutableTaps = false;
           };
         }
       ];

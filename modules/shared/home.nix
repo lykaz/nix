@@ -3,6 +3,7 @@
 let
   packages = with pkgs; [
     fastfetch
+    rapidraw
   ];
 in
 {
