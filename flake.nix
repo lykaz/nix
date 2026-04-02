@@ -12,10 +12,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Funky brew stuff
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew"
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    homebrew-core = { url = "github:homebrew/homebrew-core"; flake = false; };
+    homebrew-cask = { url = "github:homebrew/homebrew-cask"; flake = false; };
+    homebrew-bundle = { url = "github:homebrew/homebrew-bundle"; flake = false; };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle }:
   let
     pkgsDarwin = import nixpkgs {
       system = "aarch64-darwin";
@@ -28,9 +32,11 @@
     darwinConfigurations.air = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = pkgsDarwin;
+      specialArgs = { inherit inputs; }; # passes inputs to other modules
       modules = [
       #  ./modules/shared  # For system related configs
        ./modules/air
+       nix-homebrew.darwinModules.nix-homebrew
 
         home-manager.darwinModules.home-manager{
           home-manager.useGlobalPkgs = true;
@@ -41,16 +47,6 @@
               ./modules/shared/home.nix
               ./modules/air/home.nix
             ];
-          };
-        }
-
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "lukas";
-            mutableTaps = false;
           };
         }
       ];
