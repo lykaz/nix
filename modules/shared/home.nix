@@ -8,6 +8,7 @@ let
     discord
     gramps
     # synology-drive-client broken on darwin
+    inkscape # brocken on darwin, adwaita icon or smth
   ];
 in
 {
