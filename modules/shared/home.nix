@@ -5,6 +5,9 @@ let
     fastfetch
     rapidraw
     signal-desktop
+    discord
+    gramps
+    # synology-drive-client broken on darwin
   ];
 in
 {
