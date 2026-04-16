@@ -4,6 +4,7 @@ let
   packages = with pkgs; [
     fastfetch
     rapidraw
+    signal-desktop
   ];
 in
 {
