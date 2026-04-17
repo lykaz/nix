@@ -15,5 +15,10 @@ in
   home.homeDirectory = "/Users/${username}";
   home.stateVersion = "24.11";
 
+  # additional packages that require more config
+  imports = [
+    ./aerospace.nix
+  ];
+
   home.packages = macPackages;
 }
