@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  extensions = [];
+  extensions = [ "nix" ];
 
   settings = {
     theme = {

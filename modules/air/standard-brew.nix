@@ -5,5 +5,7 @@
     "pinta"
     "vlc"
     "synology-drive"
+    "google-gemini"
+    "blender"
   ];
 }
