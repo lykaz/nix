@@ -10,6 +10,7 @@ let
     # synology-drive-client broken on darwin
     inkscape # brocken on darwin, adwaita icon or smth
     obsidian
+    direnv
   ];
 in
 {
@@ -17,6 +18,11 @@ in
     ./kitty.nix
     ./zed.nix
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   home.stateVersion = "24.11";
 
