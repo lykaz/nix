@@ -4,8 +4,7 @@
   homebrew.casks = [
     "vlc"
     "synology-drive"
-    "google-gemini"
-    # "blender"
+    "google-gemi"
     "playcover-community"
     # "pinta"
   ];
