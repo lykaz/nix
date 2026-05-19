@@ -6,3 +6,5 @@ nix flake update
 darwin-rebuild switch --flake .#air
 
 direnv reload
+
+nix-collect-garbage -d
