@@ -7,6 +7,7 @@ let
     raycast
     whatsapp-for-mac
     battery-toolkit
+    tidal
   ];
 in
 {

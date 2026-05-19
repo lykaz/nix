@@ -4,6 +4,7 @@ let
   extensions = [
     "nix"
     "vscode-icons"
+    "prolog"
   ];
 
   settings = {
@@ -22,6 +23,13 @@ let
     base_keymap = "VSCode";
     vim_mode = true;
     trusted_projects = "all";
+
+    # using direnv
+    load_direnv = "shell_hook";
+
+    terminal = {
+      shell = "system";
+    };
 
     telemetry = {
       enabled = false;

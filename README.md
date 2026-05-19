@@ -5,3 +5,4 @@ nix flake update
 # Rebuild system
 darwin-rebuild switch --flake .#air
 
+direnv reload
