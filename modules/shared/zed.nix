@@ -5,6 +5,7 @@ let
     "nix"
     "vscode-icons"
     "prolog"
+    "csv"
   ];
 
   settings = {
