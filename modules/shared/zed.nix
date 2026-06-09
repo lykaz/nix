@@ -37,6 +37,16 @@ let
     };
   };
 
+  keymaps = [
+    {
+      use_key_equivalents = true;
+      bindings = {
+        "cmd-ö" = "pane::ActivatePrevItem";
+        "cmd-ä" = "pane::ActivateNextItem";
+      };
+    }
+  ];
+
 in
 {
   programs.zed-editor = {
@@ -44,5 +54,6 @@ in
 
     extensions = extensions;
     userSettings = settings;
+    userKeymaps = keymaps;
   };
 }
