@@ -2,7 +2,9 @@
   description = "system config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    hardware.url = "github:nixos/nixos-hardware";
+
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -19,7 +21,7 @@
     homebrew-bundle = { url = "github:homebrew/homebrew-bundle"; flake = false; };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle }:
+  outputs = inputs@{ self, nixpkgs, hardware, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle }:
   let
     pkgsDarwin = import nixpkgs {
       system = "aarch64-darwin";
@@ -50,6 +52,10 @@
           };
         }
       ];
+    };
+
+    nixosConfigurations.d13 = nixpkgs.lib.nixosSystem {
+      modules = [ ./hosts/d13 ];
     };
   };
 }
