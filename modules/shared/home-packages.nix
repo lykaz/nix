@@ -15,6 +15,6 @@
     inkscape # brocken on darwin, adwaita icon or smth
     obsidian
     direnv
-    blender
-  ]
+    # blender
+  ];
 }

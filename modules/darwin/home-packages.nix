@@ -1,9 +1,9 @@
 {pkgs, ... }:
 {
-  home.packages = [
+  home.packages = with pkgs; [
     raycast
     whatsapp-for-mac
     battery-toolkit
     tidal
-  ]
+  ];
 }

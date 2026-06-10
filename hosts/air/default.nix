@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: 
+{ pkgs, inputs,... }: 
 {  
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -17,4 +17,12 @@
   };
 
   networking.hostName = "air";
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.lukas = {
+    imports = [
+      ../../home/darwin/home.nix
+    ];
+  };
 }

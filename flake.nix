@@ -34,28 +34,19 @@
     darwinConfigurations.air = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = pkgsDarwin;
-      specialArgs = { inherit inputs; }; # passes inputs to other modules
+      specialArgs = { inherit inputs; }; 
+      
       modules = [
-      #  ./modules/shared  # For system related configs
-       ./modules/air
-       nix-homebrew.darwinModules.nix-homebrew
-
-        home-manager.darwinModules.home-manager{
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-
-          home-manager.users.lukas = {
-            imports = [
-              ./modules/shared/home.nix
-              ./modules/air/home.nix
-            ];
-          };
-        }
+        ./hosts/air/default.nix
+        nix-homebrew.darwinModules.nix-homebrew
+        home-manager.darwinModules.home-manager
       ];
     };
 
     nixosConfigurations.d13 = nixpkgs.lib.nixosSystem {
-      modules = [ ./hosts/d13 ];
+      modules = [ 
+        ./hosts/d13 
+      ];
     };
   };
 }

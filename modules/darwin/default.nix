@@ -1,3 +1,4 @@
+{ inputs, ... }: 
 {
   nix-homebrew = {
     enable = true;
