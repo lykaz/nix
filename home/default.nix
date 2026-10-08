@@ -5,6 +5,7 @@
     ./dconf.nix
     ./firefox.nix
     ./ssh.nix
+    ./tmux.nix
   ];
 
   home = {
