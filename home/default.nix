@@ -3,7 +3,7 @@
 {
   imports = [
     ./firefox.nix
-    # ./ssh.nix
+    ./ssh.nix
   ];
 
   home = {
