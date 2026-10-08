@@ -8,7 +8,9 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./services
       ./system
+      ./system-packages
     ];
 
   nix.settings.experimental-features = ["flakes"];

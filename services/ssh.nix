@@ -1,5 +1,5 @@
 {
-  services.printing = {
+  services.openssh = {
     enable = true;
   };
 }
