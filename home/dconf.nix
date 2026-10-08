@@ -2,8 +2,8 @@
 
 let
   wallpaper_dark = pkgs.fetchurl {
-    url = "https://wallhaven.cc/w/x1xvjo";
-    sha256 = "1bqcg7qlxsm2dqg9f8ljgknsc9ssrxsql0f9xarzci7axffd69lm";
+    url = "https://w.wallhaven.cc/full/x1/wallhaven-x1xvjo.jpg";
+    sha256 = "0in229wlgm8zz4fc80ajas60mlklhqclsp8gxsdydd32zks80wyy";
   };
 in
 {
