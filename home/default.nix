@@ -6,6 +6,7 @@
     ./firefox.nix
     ./ssh.nix
     ./tmux.nix
+    ./linux
   ];
 
   home = {

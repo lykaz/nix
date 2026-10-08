@@ -8,6 +8,8 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "backup";
+
     users.lukas = ./home;
   };
 }
