@@ -1,0 +1,7 @@
+keys:
+  - &laptop age1gn0p5j79w25j2cp2w4ka8nagrs2xf8860xxyhxpe9vg39x3yl47q99tg69
+creation_rules:
+  - path_regex: secrets/.*
+    key_groups:
+      - age:
+        - *laptop

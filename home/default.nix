@@ -1,6 +1,11 @@
 {pkgs, ...}:
 
 {
+  imports = [
+    ./firefox.nix
+    # ./ssh.nix
+  ];
+
   home = {
     username = "lukas";
     homeDirectory = "/home/lukas";
@@ -8,7 +13,7 @@
     packages = with pkgs; [
       gram
       git
-      firefox
+      kitty
     ];
    };
 }
