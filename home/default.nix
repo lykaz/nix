@@ -15,6 +15,7 @@
       gram
       git
       kitty
+      discord
     ];
    };
 }
