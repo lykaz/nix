@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./dconf.nix
     ./firefox.nix
     ./ssh.nix
   ];
